@@ -10,9 +10,11 @@ import './Carousel.css'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import BigCalendar from 'react-big-calendar';
-import Calendar from 'react_google_calendar'
+import Calendar from 'react_google_calendar';
+import ContactForm from './ContactForm.js';
+import './ContactForm.css';
 import moment from 'moment';
-import config from '../config.json'
+import config from './config.json'
 
 const calendar_configuration = {
     api_key: config.calendar_api_key,
@@ -41,6 +43,7 @@ class App extends Component {
     this.HomeButton = this.HomeButton.bind(this);
     this.AboutButton = this.AboutButton.bind(this);
     this.CalendarButton = this.CalendarButton.bind(this);
+    this.ContactButton = this.ContactButton.bind(this);
     this.nextSlide = this.nextSlide.bind(this);
     this.prevSlide = this.prevSlide.bind(this);
   }
@@ -55,6 +58,10 @@ class App extends Component {
 
   CalendarButton(){
     this.setState({pageNumber: 2})
+  }
+
+  ContactButton(){
+    this.setState({pageNumber: 3})
   }
 
   nextSlide(){
@@ -133,6 +140,10 @@ class App extends Component {
         config={calendar_configuration} />
       </div>
     }
+    if (pageNumber === 3){
+      content =
+      <ContactForm />
+    }
 
     return (
       <div className="App">
@@ -145,7 +156,7 @@ class App extends Component {
               <a onClick={this.HomeButton} className="TaskbarButton">Home</a>
               <a onClick={this.AboutButton} className="TaskbarButton">About</a>
               <a onClick={this.CalendarButton} className="TaskbarButton">Calendar</a>
-              <a onClick={this.CalendarButton} className="TaskbarButton">Contact</a>
+              <a onClick={this.ContactButton} className="TaskbarButton">Contact</a>
           </nav>
         </header>
         <main>
