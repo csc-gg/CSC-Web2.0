@@ -1,0 +1,25 @@
+
+
+
+{
+  "officials":[
+    {
+      "title":"President",
+      "name":"Ari",
+      "profile_pic":"ari.png",
+      "bio":"Ari is the president of the Santa Rosa Junior College Computer Science Club."
+    },
+    {
+      "title":"Vice President",
+      "name":"Zach",
+      "profile_pic":"zach.png",
+      "bio":"Zach is the vice president of the Santa Rosa Junior College Computer Science Club."
+    },
+    {
+      "title":"Treasurer",
+      "name":"Ian",
+      "profile_pic":"ian.png",
+      "bio":"Ian is the treasurer of the Santa Rosa Junior College Computer Science Club."
+    }
+  ]
+}

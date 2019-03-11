@@ -6,15 +6,20 @@ import Placeholder from './Placeholder.jpg';
 import { Carousel } from 'react-responsive-carousel';
 import './fonts.css';
 import './App.css';
-import './Carousel.css'
+import './Carousel.css';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import BigCalendar from 'react-big-calendar';
 import Calendar from 'react_google_calendar';
 import ContactForm from './ContactForm.js';
 import './ContactForm.css';
+import Bio from './Bio.js';
+import './Bio.css';
+import OfficialsList from './OfficialsList.js';
+import './OfficialsList.css';
 import moment from 'moment';
-import config from './config.json'
+import config from './config.json';
+import officials from './officials.json';
 
 const calendar_configuration = {
     api_key: config.calendar_api_key,
@@ -28,6 +33,8 @@ const calendar_configuration = {
     weeklyRecurrence: 500,
     monthlyRecurrence: 20
 }
+
+const officials_data = officials;
 
 class App extends Component {
 
@@ -130,6 +137,7 @@ class App extends Component {
       professional environment for people to collaborate with each other to
       create innovative projects and gives students a chance to further explore
       the vast field of Computer Science. We welcome anyone to join.
+        <OfficialsList officials_list={this.officials_data} />
       </div>
     }
     if (pageNumber === 2) {
